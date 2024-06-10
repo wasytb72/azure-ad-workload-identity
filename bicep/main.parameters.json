@@ -56,13 +56,13 @@
       "value": "Standard_D4s_v3"
     },
     "systemNodePoolAgentCount": {
-      "value": 3
+      "value": 1
     },
     "systemNodePoolMaxCount": {
-      "value": 5
+      "value": 1
     },
     "systemNodePoolMinCount": {
-      "value": 3
+      "value": 1
     },
     "systemNodePoolNodeTaints": {
       "value": [
@@ -76,13 +76,13 @@
       "value": "Standard_D4s_v3"
     },
     "userNodePoolAgentCount": {
-      "value": 3
+      "value": 1
     },
     "userNodePoolMaxCount": {
-      "value": 5
+      "value": 1
     },
     "userNodePoolMinCount": {
-      "value": 3
+      "value": 1
     },
     "virtualNetworkAddressPrefixes": {
       "value": "10.0.0.0/8"
@@ -107,6 +107,9 @@
     },
     "logAnalyticsRetentionInDays": {
       "value": 60
+    },
+    "jumpHost":{
+      "value": "false"
     },
     "vmName": {
       "value": "GundamVm"

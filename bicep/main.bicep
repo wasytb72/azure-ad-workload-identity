@@ -328,6 +328,9 @@ param logAnalyticsSku string = 'PerNode'
 @description('Specifies the workspace data retention in days. -1 means Unlimited retention for the Unlimited Sku. 730 days is the maximum allowed for all other Skus.')
 param logAnalyticsRetentionInDays int = 60
 
+@description('Create or not the VM JumpHost')
+param jumpHost bool = false
+
 @description('Specifies the name of the virtual machine.')
 param vmName string = 'TestVm'
 
@@ -631,7 +634,7 @@ module network 'network.bicep' = {
   }
 }
 
-module virtualMachine 'virtualMachine.bicep' = {
+module virtualMachine 'virtualMachine.bicep' = if (jumpHost) {
   name: 'virtualMachine'
   params: {
     vmName: vmName

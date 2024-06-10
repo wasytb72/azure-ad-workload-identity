@@ -619,7 +619,7 @@ resource cosmosDbDatabaseName_resource 'Microsoft.DocumentDB/databaseAccounts/sq
     options: {}
   }
   dependsOn: [
-    cosmosDbAccountId
+    cosmosDbAccountName_resource
   ]
 }
 
@@ -653,8 +653,8 @@ resource cosmosDbDatabaseContainerName 'Microsoft.DocumentDB/databaseAccounts/sq
     }
   }
   dependsOn: [
-    cosmosDbAccountId
-    cosmosDbDatabaseId
+    cosmosDbAccountName_resource
+    cosmosDbDatabaseName_resource
   ]
 }
 
@@ -687,9 +687,6 @@ resource serviceBusNamespaceName_serviceBusQueueName 'Microsoft.ServiceBus/names
     enablePartitioning: false
     enableExpress: false
   }
-  dependsOn: [
-    serviceBusNamespaceId
-  ]
 }
 
 resource bastionPublicIpAddressName 'Microsoft.Network/publicIPAddresses@2020-05-01' = {

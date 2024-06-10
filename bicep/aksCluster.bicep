@@ -450,13 +450,13 @@ resource aksCluster 'Microsoft.ContainerService/managedClusters@2022-03-02-previ
     networkProfile: {
       networkPlugin: networkPlugin
       networkPolicy: networkPolicy
-      podCidr: networkPlugin == 'azure' ? json('null') : podCidr
+      podCidr: networkPlugin == 'azure' ? null : podCidr
       serviceCidr: serviceCidr
       dnsServiceIP: dnsServiceIP
       dockerBridgeCidr: dockerBridgeCidr
       outboundType: outboundType
       loadBalancerSku: loadBalancerSku
-      loadBalancerProfile: json('null')
+      loadBalancerProfile: null
     }
     aadProfile: {
       clientAppID: null
@@ -482,7 +482,7 @@ resource aksCluster 'Microsoft.ContainerService/managedClusters@2022-03-02-previ
     }
     apiServerAccessProfile: {
       enablePrivateCluster: enablePrivateCluster
-      privateDNSZone: enablePrivateCluster ? privateDNSZone : json('null')
+      privateDNSZone: enablePrivateCluster ? privateDNSZone : null
       enablePrivateClusterPublicFQDN: enablePrivateClusterPublicFQDN
     }
   }
